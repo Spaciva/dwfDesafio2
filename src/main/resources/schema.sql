@@ -1,11 +1,11 @@
 -- Tabla Profesor
-CREATE TABLE profesor (
+CREATE TABLE IF NOT EXISTS profesor (
                           id BIGINT AUTO_INCREMENT PRIMARY KEY,
                           nombre VARCHAR(100) NOT NULL
 );
 
 -- Tabla Materia
-CREATE TABLE materia (
+CREATE TABLE IF NOT EXISTS materia (
                          id BIGINT AUTO_INCREMENT PRIMARY KEY,
                          nombre VARCHAR(100) NOT NULL,
                          id_profesor BIGINT,
@@ -13,14 +13,14 @@ CREATE TABLE materia (
 );
 
 -- Tabla Alumno
-CREATE TABLE alumno (
+CREATE TABLE IF NOT EXISTS alumno (
                         id BIGINT AUTO_INCREMENT PRIMARY KEY,
                         nombre VARCHAR(100) NOT NULL,
                         apellido VARCHAR(100) NOT NULL
 );
 
 -- Tabla Intermedia (Inscripciones)
-CREATE TABLE alumno_materia (
+CREATE TABLE IF NOT EXISTS alumno_materia (
                                 id_alumno BIGINT,
                                 id_materia BIGINT,
                                 PRIMARY KEY (id_alumno, id_materia),
